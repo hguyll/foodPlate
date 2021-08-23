@@ -9,3 +9,17 @@ footer {
 footer>* {
     padding: 0 1em;
 }
+
+.footer--update {
+    color: red;
+    font-weight: bold;
+    font-size: .65em;
+    background: white;
+    border: 1px solid black;
+    border-radius: .2em;
+    padding: .35em;
+}
+
+.footer--update::after {
+    content: " Update Needed!";
+}

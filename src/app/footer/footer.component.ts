@@ -6,13 +6,12 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./footer.component.css']
 })
 export class FooterComponent implements OnInit {
+  logoAlt = "FoodPlate Logo";
   versionString: string = '1.0.0';
   icon: string = 'assets/assets/images/icons/icons-29.png';
-  logoAlt = "FoodPlate Logo";
+  isCurrent: Boolean = false;
 
   constructor() { }
 
-  ngOnInit(): void {
-  }
-
+  ngOnInit(): void { }
 }
