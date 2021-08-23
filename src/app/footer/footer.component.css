@@ -5,3 +5,7 @@ footer {
     text-align: left;
     border-top: 3px solid black;
 }
+
+footer>* {
+    padding: 0 1em;
+}
