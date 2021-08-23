@@ -14,4 +14,8 @@ export class FooterComponent implements OnInit {
   constructor() { }
 
   ngOnInit(): void { }
+
+  moreInfo() {
+    alert('For more info see choosemyplate.gov');
+  }
 }
