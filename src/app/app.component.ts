@@ -1,5 +1,4 @@
-import { Component, OnInit, ViewEncapsulation } from '@angular/core';
-import { Title } from '@angular/platform-browser';
+import { Component, OnInit, Output, ViewEncapsulation } from '@angular/core';
 import { User } from './models/User';
 import { UserService } from './services/user.service';
 
@@ -10,13 +9,11 @@ import { UserService } from './services/user.service';
   encapsulation: ViewEncapsulation.None
 })
   export class AppComponent implements OnInit {
+    @Output()
     user: User;
-
-    constructor(private titleService: Title, private userService: UserService) {
+    constructor(userService: UserService) {
       this.user = userService.getUser();
     }
 
-  ngOnInit() {
-    this.titleService.setTitle("Welcome to FoodPlate!");
-  }
+  ngOnInit() {  }
 }
