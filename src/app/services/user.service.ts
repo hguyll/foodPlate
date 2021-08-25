@@ -8,11 +8,13 @@ import { UserStatusService } from './user-status.service';
 export class UserService {
   
   private user: User = new User(1, 'Kevin', 'M', '51+', 'M51+', {}, {fruitMet: 
-    true, vegMet: false, proteinMet: true, grainMet: false}, false, 
+    true, vegMet: false, proteinMet: true, grainMet: false}, true, 
     'kevin@kevinruse.com');
 
   constructor(@Optional() private userStatusService: UserStatusService) { 
-    this.userStatusService.getUserStatus(this.user);
+    if(this.userStatusService){
+      this.userStatusService.getUserStatus(this.user);
+    }
   }
 
   getUser(): User {

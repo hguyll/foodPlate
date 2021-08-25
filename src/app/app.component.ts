@@ -9,7 +9,6 @@ import { UserService } from './services/user.service';
   encapsulation: ViewEncapsulation.None
 })
   export class AppComponent implements OnInit {
-    @Output()
     user: User;
     constructor(userService: UserService) {
       this.user = userService.getUser();

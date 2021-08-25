@@ -1,4 +1,5 @@
 import { Component, Input, OnInit, Output } from '@angular/core';
+import { Router } from '@angular/router';
 import { User } from '../models/User';
 
 @Component({
@@ -7,10 +8,13 @@ import { User } from '../models/User';
   styleUrls: ['./main.component.css']
 })
 export class MainComponent implements OnInit {
-  @Output()
   @Input()
   user: User;
-  constructor() { }
+  router: Router;
+
+  constructor(private _router : Router) { 
+    this.router = _router;
+  }
 
   ngOnInit(): void {
   }
