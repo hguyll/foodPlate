@@ -1,5 +1,6 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
+import { HttpClientModule } from '@angular/common/http';
 
 import { AppComponent } from './app.component';
 import { HeaderComponent } from './header/header.component';
@@ -15,7 +16,9 @@ import { DefaultComponent } from './components/default/default.component';
 import { AppRoutingModule } from './app-routing.module';
 import { FarmersmarketsComponent } from './components/farmersmarkets/farmersmarkets.component';
 import { ExercisesComponent } from './components/exercises/exercises.component';
-
+import { ReactiveFormsModule } from '@angular/forms';
+import { TodaysGoalComponent } from './todays-goal/todays-goal.component';
+import { FoodComponent } from './food/food.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -31,12 +34,16 @@ import { ExercisesComponent } from './components/exercises/exercises.component';
     RegisterComponent,
     DefaultComponent,
     FarmersmarketsComponent,
-    ExercisesComponent
+    ExercisesComponent,
+    TodaysGoalComponent,
+    FoodComponent
   ],
   imports: [
     BrowserModule,
     FoodGroupsModule,
-    AppRoutingModule
+    AppRoutingModule,
+    ReactiveFormsModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]

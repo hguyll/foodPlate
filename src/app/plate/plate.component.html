@@ -1,14 +1,14 @@
 <section id="plate">
     <div id="foodPlateWrapper">
       <div id="colwrap1">
-        <img id="fruit" [src]="(user.reqsStatus.fruitMet) ? fruitFull : fruitEmpty"/>
-        <img id="veg" [src]="(user.reqsStatus.vegMet) ? vegFull : vegEmpty"
+        <img id="fruit" [src]="(currentUser?.reqsStatus.fruitMet) ? fruitFull : fruitEmpty"/>
+        <img id="veg" [src]="(currentUser?.reqsStatus.vegMet) ? vegFull : vegEmpty"
         id="veg"/></div>
       <div id="colwrap2">
-        <img id="grain" [src]="(user.reqsStatus.grainMet) ? grainDairyFull : 
+        <img id="grain" [src]="(currentUser?.reqsStatus.grainMet) ? grainDairyFull : 
         grainDairyEmpty"/>
         <div id="logoContainer" class="clearFloat"></div>
-        <img id="protein" [src]="(user.reqsStatus.proteinMet) ? proteinFull : proteinEmpty"
+        <img id="protein" [src]="(currentUser?.reqsStatus.proteinMet) ? proteinFull : proteinEmpty"
         id="protein"/>
         <div class="clearFloat"></div>
       </div>

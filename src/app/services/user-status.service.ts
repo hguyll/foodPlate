@@ -11,7 +11,7 @@ export class UserStatusService {
   constructor() { }
 
   getRegisteredStatus(currentUser) {
-    if(currentUser.registered == true){
+    if(currentUser.registered){
       console.log(`User Registered is${currentUser.registered}`)
     }
   }

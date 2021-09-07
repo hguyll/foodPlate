@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { Subscription } from 'rxjs';
+import { TodaysGoalService } from '../services/todays-goal.service';
 
 @Component({
   selector: 'fp-footer',
@@ -6,14 +8,29 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./footer.component.css']
 })
 export class FooterComponent implements OnInit {
-  logoAlt = "FoodPlate Logo";
-  versionString: string = '1.0.0';
+  goal: any;
   icon: string = 'assets/assets/images/icons/icons-29.png';
   isCurrent: Boolean = false;
+  logoAlt = "FoodPlate Logo";
+  subscription: Subscription;
+  versionString: string = '1.0.0';
 
-  constructor() { }
+  constructor(private todaysGoalService: TodaysGoalService) { 
+    this.subscription = this.todaysGoalService.getGoal()
+      .subscribe(goal => {
+        this.goal = goal;
+      });
+  }
 
   ngOnInit(): void { }
+
+  ngOnDestroy(): void {
+    this.subscription.unsubscribe();
+  }
+
+  clearGoal(): void {
+    this.todaysGoalService.clearGoal();
+  }
 
   moreInfo() {
     alert('For more info see choosemyplate.gov');
