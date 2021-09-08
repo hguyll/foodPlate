@@ -1,16 +1,19 @@
 import { HttpClient, HttpEventType, HttpRequest, HttpResponse } from '@angular/common/http';
 import { Injectable } from '@angular/core';
+import { Observable } from 'rxjs';
 
 @Injectable()
 export class FoodService {
   private foodUrl: string = 'http://localhost:3005/foodItems';
   foodRequest = new HttpRequest('GET', this.foodUrl, {reportProgress: true});
 
-  constructor(private http: HttpClient) { }
+  constructor(private http: HttpClient) { 
+    this.getAllFoods();
+  }
 
   loadFood() {
     return this.http.get(this.foodUrl);
-  }
+  } 
 
   getFoodProgress() {
     let totalBytes: number;
@@ -25,5 +28,9 @@ export class FoodService {
         console.log('File is completely downloaded');
       }
     })
+  }
+
+  getAllFoods<T>(): Observable<T> {
+    return this.http.get<T>(this.foodUrl);
   }
 }

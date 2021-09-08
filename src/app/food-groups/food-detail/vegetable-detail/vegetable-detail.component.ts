@@ -6,7 +6,10 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./vegetable-detail.component.css']
 })
 export class VegetableDetailComponent implements OnInit {
-
+  vegetableSample = {
+    'ounces': 22
+   };
+   
   constructor() { }
 
   ngOnInit(): void {

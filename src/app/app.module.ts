@@ -19,6 +19,7 @@ import { ExercisesComponent } from './components/exercises/exercises.component';
 import { ReactiveFormsModule } from '@angular/forms';
 import { TodaysGoalComponent } from './todays-goal/todays-goal.component';
 import { FoodComponent } from './food/food.component';
+import { GoalsComponent } from './goals/goals.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -36,7 +37,8 @@ import { FoodComponent } from './food/food.component';
     FarmersmarketsComponent,
     ExercisesComponent,
     TodaysGoalComponent,
-    FoodComponent
+    FoodComponent,
+    GoalsComponent
   ],
   imports: [
     BrowserModule,

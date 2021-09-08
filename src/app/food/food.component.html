@@ -1,1 +1,16 @@
-<p>food works!</p>
+<section *ngIf="!isLoading && !errorMessage" class="loadingMessage">
+    WAIT!!! ...Retrieving Nutrition Data...
+    <select class="selectMenu" name="foodGroup" id="foodGroup">
+      <option value="allFoods" selected>Select a food group</option>
+      <option *ngFor="let group of foodGroups" value="{{group}}">{{group}}</option>
+    </select>
+</section>
+<section>
+    <select name="foods" id="foods" size="10">
+        <option *ngFor="let item of foodList"> {{ item.description }}</option>
+    </select>
+</section>
+
+<section class="errMessage" *ngIf="errorMessage">
+ {{errorMessage}}
+</section>

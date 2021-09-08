@@ -8,12 +8,8 @@ import { FoodGroupsService } from '../services/food-groups.service';
   styleUrls: ['./food-groups.component.css']
 })
 export class FoodGroupsComponent implements OnInit {
-
   foodGroups;
-  showGroup(group) {
-    console.log(group.name);
-    this.router.navigate(group.name, { relativeTo: this.route });
-  }
+
   constructor(private foodGroupsService: FoodGroupsService,
               private router: Router, private route: ActivatedRoute) {
 
@@ -23,4 +19,8 @@ export class FoodGroupsComponent implements OnInit {
     this.foodGroups = this.foodGroupsService.getFoodGroups();
   }
 
+  showGroup(group) {
+    console.log(group.name);
+    this.router.navigate([group.name], {relativeTo: this.route, queryParams: {group: `${group.name}`}});
+  }
 }
